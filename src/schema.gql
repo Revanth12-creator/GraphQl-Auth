@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  userId: String!
+  name: String!
+  email: String!
+  password: String!
+}
+
+type Jwt {
+  token: String!
+  userId: String!
+  name: String!
+  email: String!
+}
+
+type Query {
+  auth(id: Int!): User!
+  user(id: Int!): User!
+}
+
+type Mutation {
+  createAuth(createAuthInput: CreateAuthInput!): User!
+  login(loginInput: CreateAuthInput!): Jwt!
+  updateAuth(updateAuthInput: UpdateAuthInput!): User!
+  removeAuth(id: Int!): User!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+}
+
+input CreateAuthInput {
+  email: String!
+  password: String!
+}
+
+input UpdateAuthInput {
+  email: String
+  password: String
+  id: Int!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  id: Int!
+}
